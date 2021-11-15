@@ -1,6 +1,13 @@
 * {
+    
+    
+}
+.body{
+    background-color: ghostwhite;
     font-family: 'Bitter', serif;
 }
+
+
 
 
 
@@ -162,7 +169,7 @@ a:hover {
 }
 .footercolor {
     text-decoration: none;
-    color: gainsboro;
+    color: gray;
     font-size: 1rem;
 }
 .footercolor:hover {
@@ -179,9 +186,17 @@ a:hover {
     color: sandybrown;
     
 }
-
-
+div.headerflex a{
+    text-decoration: none;
+    color: gray;
     
+    font-size: 1.1rem;
+}
+div.headerflex:hover {
+    text-decoration: underline;
+    color: sandybrown;
+    
+}
                         
                          
     
