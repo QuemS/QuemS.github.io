@@ -308,20 +308,13 @@ div.headerflex:hover {
         margin: 70px 0 70px 0;
      
     }
-     .gridfooter > div  {
+    #gridfooter > div:not(.not ) {
         border-bottom: 1px solid gray;
     }
-    .information  {
-        border: 0px solid white !important;
-    }
-    .customer {
-        border: 0px solid white !important;
-    }
-    .extras{
-        border: 0px solid white !important;
-    } 
-    .myaccount{
-        border: 0px solid white !important;
+
+       
+    
+    
     }
     .copyrigth {
         padding: 30px 0;

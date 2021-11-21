@@ -184,3 +184,67 @@
      color: sandybrown;
      
  }
+
+
+
+
+ .about {
+    grid-area: about;
+    border-bottom: 1px solid gray;
+}
+.contact {
+    grid-area: contact;
+    border-bottom: 1px solid gray;
+}
+.brands {
+    grid-area: brands;
+    border-bottom: 1px solid gray;
+}
+.account {
+    grid-area: account;
+    border-bottom: 1px solid gray;
+}
+.delivery {
+    grid-area: delivery;
+    border-bottom: 1px solid gray;
+}
+.returns {
+    grid-area: returns;
+    border-bottom: 1px solid gray;
+}
+.gift {
+    grid-area: gift;
+    border-bottom: 1px solid gray;
+}
+.order {
+    grid-area: order;
+    border-bottom: 1px solid gray;
+}
+.privacy {
+    grid-area: privacy;
+    border-bottom: 1px solid gray;
+}
+.site {
+    grid-area: site;
+    border-bottom: 1px solid gray;
+}
+.affiliater {
+    grid-area: affiliater;
+    border-bottom: 1px solid gray;
+}
+.withlist {
+    grid-area: withlist;
+    border-bottom: 1px solid gray;
+}
+.temps {
+    grid-area: temps;
+    border-bottom: 1px solid gray;
+}
+.specials {
+    grid-area: specials;
+    border-bottom: 1px solid gray;
+}
+.newsletter {
+    grid-area: newsletter;
+    border-bottom: 1px solid gray;
+}
