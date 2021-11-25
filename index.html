@@ -8,27 +8,72 @@
     <link rel="stylesheet" href="/assets/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&family=Exo+2&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@600&family=Ubuntu+Mono:ital@1&display=swap" rel="stylesheet">
-    <title></title>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/navbar-1/assets/css/style.css">
+    <title>Home</title>
 </head>
-<body>
-    <div>
-        <Header>
+<body class="container">
+    
+    <div class="all">
+        
+            <div class="navigation ">
+                    <ul>
+                        <li class="list active">
+                            <a href="">
+                            <span class="navicon"><i class="fas fa-home"></i></span>
+                            <span class="navtext">Home</span>
+                            </a>
+                        </li>
+                        <li class="list ">
+                            <a href="https://github.com/QuemS">
+                            <span class="navicon"><i class="fas fa-user"></i></span>
+                            <span class="navtext">Github</span>
+                            </a>
+                        </li>
+                        <li class="list ">
+                            <a href="mailto:hostkillcar@gmail.com">
+                            <span class="navicon"><i class="fas fa-envelope"></i></span>
+                            <span class="navtext">Email</span>
+                            </a>
+                        </li>
+                        <li class="list ">
+                            <a href="">
+                            <span class="navicon"><i class="fas fa-question-circle"></i></span>
+                            <span class="navtext">Help</span>
+                            </a>
+                        </li>
+                        <li class="list ">
+                            <a href="">
+                            <span class="navicon"><i class="fas fa-cog"></i></span>
+                            <span class="navtext">Settings</span>
+                            </a>
+                        </li>
+                        <div class="indicator"></div>
+                    </ul>
+                   
+            </div>
+            <h1 class="  pb-1 pt-2 "> Mykhailo Sushchenok</h1>
+            <h1 class=" pb-1">Homework</h1>
 
 
 
             
-        </Header>
-      <h1 class="ps-5 pt-5 pb-1 s"> Mykhailo Sushchenok</h1>
-      <h1 class="ps-5  pb-1">HomeWork</h1>
-
-      <div class="ps-5 pt-2">
-      <a href="/Homework-10/homewoek-10.html" class="btn btn-success ">Homework-10</a>
-      </div>
-      <div class="ps-5 pt-2">
-      <a href="/Homework11-1/homework11-2.html" class="btn btn-success">Homework-11</a>
-      </div>
+      
+      
     </div>
+    <script>
+        let list = document.querySelectorAll('.list');
+        function setActiveClass(){
+            list.forEach((item) => 
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover' , setActiveClass));
+    </script>  
     
     
 </body>
