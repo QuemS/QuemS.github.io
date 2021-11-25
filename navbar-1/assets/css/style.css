@@ -5,20 +5,19 @@
     
 }
 body {
-    background-image: url(/assets/img/img4.png);
+   
+    background: #3a3737;
 }
 .all {
     
     
-        
     
-    font-family: 'Bitter', serif;
-    font-family: 'Exo 2', sans-serif;
     
     
     
 }
 .navigation {
+    
      
     
     display: flex;
@@ -50,7 +49,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: rgb(46, 43, 43);
+    color: #bac0f8;
     width: 70px;
     height: 70px;
     text-align: center;
@@ -68,7 +67,7 @@ body {
 .navigation ul li  a .navtext {
     position: absolute;
     font-size: 12px;
-    color: rgb(46, 43, 43);
+    color: #bac0f8;
     bottom: 10px;
     font-weight: 400;
     transition: 0.2s;
@@ -116,5 +115,8 @@ body {
     background: #7743f0;
     box-shadow: 0 15px 20px #7743f0;
     transform: translateX(calc(70px * 4));
+}
+div h1 {
+    color: #bac0f8;
 }
 
