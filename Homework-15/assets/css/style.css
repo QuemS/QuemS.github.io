@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container2 {
+    width: 30vw;
+    margin: auto;
+    border: 1px solid cornflowerblue;
+}
+.logo {
+    
+    
+    
+}
+div img {
+    width: 70px;
+    height: 70px;
+}
+small + small  {
+    display: none;
+}
+input:valid + small{
+    display: none;
+}
+input:valid + small + small {
+    display: block;
+}
+
