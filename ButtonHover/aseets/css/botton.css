@@ -75,7 +75,7 @@ body {
 .container-botton a:nth-child(1):before,
 .container-botton a:nth-child(1):after 
 {
- background: linear-gradient(45deg, #f0a73b,#0e1538,#d400d4);
+ background: linear-gradient(45deg, #00ccff,#0e1538,#d400d4);
 
 }
 
