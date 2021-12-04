@@ -146,8 +146,8 @@ main {
         font-size: 55%;
     }
     .navbar a  {
-        font-size: 2rem;
-        padding: 0.3rem 0;
+        font-size: 2.5rem;
+        padding: 1rem 0;
     }
     
     .navbar a span {
@@ -198,6 +198,7 @@ main {
     main {
         padding: 0;
     }
+    
    
 }
 
