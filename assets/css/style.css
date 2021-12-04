@@ -145,10 +145,11 @@ main {
     html {
         font-size: 55%;
     }
-    .navbar a {
-        padding: 0;
-
+    .navbar a  {
+        font-size: 2rem;
+        padding: 0.3rem 0;
     }
+    
     .navbar a span {
         display: none;
     }
@@ -173,6 +174,8 @@ main {
    main {
     min-height: calc(100vh - 6.5rem);
    }
+   
+
 
 
 }
@@ -195,11 +198,7 @@ main {
     main {
         padding: 0;
     }
-    .navbar a  {
-        font-size: 1.5rem;
-        padding: 0.5rem 0;
-    }
-    
+   
 }
 
 
