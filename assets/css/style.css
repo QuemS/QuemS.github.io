@@ -19,7 +19,7 @@ html::-webkit-scrollbar-thumb {
     border-radius: 5rem;
 }
 body {
-    padding: 6.5rem;
+    padding: 2.5rem 6.5rem 6.5rem 6.5rem;
 }
 .navbar {
     position: fixed;
@@ -76,7 +76,7 @@ main {
     align-items: center;
     flex-wrap: wrap;
     gap: 4rem;
-    min-height: calc(100vh - 6.5rem);
+    min-height: calc(100vh - 12rem);
 
 }
 .image {
@@ -126,11 +126,13 @@ main {
           font-size: 55%;
       }
       main {
-        padding: 2rem 2rem;
-    }
-    body {
+        padding: 0 2rem 2rem 2rem;
+        min-height: calc(100vh - 6.5rem);
+     }
+     body {
         padding: 0 6.5rem 6.5rem 6.5rem;
     }
+    
 
 
 }
@@ -167,6 +169,9 @@ main {
     }
     .content span{
         font-size: 2.5rem;
+   }
+   main {
+    min-height: calc(100vh - 6.5rem);
    }
 
 
