@@ -121,11 +121,15 @@ main {
 /*media*/
 
 @media(max-width:1200px) {
+    
       html {
           font-size: 55%;
       }
       main {
-        padding: 5rem 2rem;
+        padding: 2rem 2rem;
+    }
+    body {
+        padding: 0 6.5rem 6.5rem 6.5rem;
     }
 
 
