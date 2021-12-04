@@ -1,0 +1,53 @@
+/*color crimsom
+black #0d0d0d 
+ligth-bg #1a1a1a
+white #fff
+light-color #aaa
+box-shadow:0 0.5rem 1rem rgba(0,0,0,0.7)*/
+
+
+html::-webkit-scrollbar-track {
+    background: black
+   
+}
+html::-webkit-scrollbar-thumb{
+    background: crimson;
+   
+}
+body {
+    background: black;
+}
+.navbar a {
+    background: #1a1a1a;
+    color: white;
+}
+.navbar i{
+    color: crimson;
+}
+.navbar a:hover {
+    background: crimson;
+    
+}
+.navbar a:hover i {
+    color: white;
+}
+.content h3 {
+    color: white;
+}
+.content span {
+    color: crimson;
+}
+.content p {
+    color: rgb(167, 164, 164)
+}
+.btn {
+    background: crimson;
+    color: white;
+}
+.btn i {
+    background: white;
+    color: crimson;
+}
+
+
+
