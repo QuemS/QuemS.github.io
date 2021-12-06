@@ -1,0 +1,55 @@
+@media(max-width:1200px) {
+    
+      html {
+          font-size: 55%;
+      }
+      main {
+        padding: 0 2rem 2rem 2rem;
+        min-height: calc(100vh - 6.5rem);
+     }
+     body {
+        padding: 0 6.5rem 6.5rem 6.5rem;
+    }
+    
+
+
+}
+
+
+@media(max-width:768px) {
+    body {
+        padding:0 0 0 0;
+    }
+    html {
+        font-size: 55%;
+    }
+    .navbar a  {
+        font-size: 2.5rem;
+        padding: 1rem 0;
+    }
+    
+    .navbar a span {
+        display: none;
+    }
+    .navbar a:hover {
+        padding-bottom: 3rem;
+        
+    }
+    .home {
+        text-align: center;
+        gap: 2rem;
+    }
+    .image img {
+        height: 30rem;
+        width: 30rem;
+    }
+    .content h3{
+         font-size: 3rem;
+    }
+    .content span{
+        font-size: 2.5rem;
+   }
+   main {
+    min-height: calc(100vh - 6.5rem);
+   }
+   

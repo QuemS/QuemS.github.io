@@ -24,7 +24,7 @@ body {
 .navbar i{
     color: crimson;
 }
-.navbar a:hover {
+.navbar a:hover  {
     background: crimson;
     
 }
@@ -38,7 +38,7 @@ body {
     color: crimson;
 }
 .content p {
-    color: rgb(167, 164, 164)
+    color: #a7a4a4;
 }
 .btn {
     background: crimson;
@@ -48,6 +48,35 @@ body {
     background: white;
     color: crimson;
 }
+.aboutme h1{
+    color: white;
+    text-align: center;
+}
+.aboutme span{
+    color: crimson;
+}
+.content_about {
+    color: white;
+}
+.personal1 span{
+    color: #DC143B;
+}
+.personal2 span{
+    color: #DC143B;
+}
+.aboutme span{
+    color: crimson;
+}
+.content_about {
+    color: white;
+}
+.about_skills span {
+    color: #dc143c;
+}
+.about_img {
+    background: #1a1a1a;
+}
+    
 
 
 

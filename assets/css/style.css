@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -19,32 +19,37 @@ html::-webkit-scrollbar-thumb {
     border-radius: 5rem;
 }
 body {
-    padding: 2.5rem 6.5rem 6.5rem 6.5rem;
+    padding:0 0 0 0;
 }
 .navbar {
     position: fixed;
-    bottom: 0; left: 0; right: 0;
+    top: 0; left: 0; right: 0;
     display: flex;
     z-index: 1000;
-    align-items: flex-end;
+    align-items: flex-start;
+    
+    
 }
 .navbar a {
-    padding: 2rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    padding: 1rem 0 1rem 0;
     flex-grow: 1;
     text-align: center;
     transition: 0.2s linear;
+    
 
 }
 .navbar a i {
    padding-right: 0.5rem;
 }
 .navbar a:hover {
-    padding-bottom: 6rem;
+    padding-top: 2rem;
+    filter: drop-shadow(0px 0px 10px crimson);
     
 }
 main {
-    padding: 5rem 9%;
+    padding: 6rem 3%;
+    
 }
 
 .btn {
@@ -75,19 +80,20 @@ main {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: 1rem;
     min-height: calc(100vh - 12rem);
 
 }
 .image {
     flex:1 1 42rem;
     text-align: center;
+    filter: drop-shadow(0px 8px 210px crimson);
 
 }
 .image img {
-    height: 50rem;
-    width: 50rem;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    height: 25rem;
+    width: 25rem;
+    border-radius: 47% 53% 21% 79% / 30% 40% 60% 70%   ;
 
 }
 .content {
@@ -95,16 +101,114 @@ main {
 }
 
 .content h3 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     padding-bottom: 0.5rem;
+    text-align: center;
 }
 .content span {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 0.5rem 0;
     display: block;
+    text-align: center;
 }
 .content p {
+    font-size: 1rem;
+    align-self: center;
+}
+
+.navbar a span {
+    display: none;
+}
+.aboutme h1{
+    padding: 7rem 2rem 1rem 2rem;
+    text-align: center;
+    font-size: 4rem;
+}
+.table_info h2 {
+    text-align: center;
+    padding: 1rem 2rem 1rem 2rem;
+    
+}
+.table_info {
+    padding: 0 0.5rem;
+    margin: auto;
+}
+.content {
+    text-align: center;
+}
+.content_about h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+.content_about {
+    padding-top: 1rem 0 0 0.5rem;
+    text-align: center;
+}
+
+.personal1 {
+    padding-top: 2rem;
+}
+.personal1 h3{
+    padding-top: 1.5rem;
     font-size: 1.5rem;
+}
+
+.personal2 h3{
+    padding-top: 2rem;
+    font-size: 1.5rem;
+}
+.personal3 h3{
+    
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    
+}
+.personal1 h3 + h3 + h3{
+    text-transform: none;
+}
+.about_flex {
+    display: flex;
+    flex-direction: column;
+}
+.about_img {
+    background: #1a1a1a;
+    width: 300px;
+    height: 350px;
+    border-radius: 1rem;
+    margin: auto;
+    padding-top: 1rem;
+    margin-bottom: 2rem;
+    transition: 0.2s;
+}
+
+
+.about_skills h1{
+    font-size: 4rem;
+    padding: 0.5rem 0 2rem 0;
+    margin-top: 4rem;
+}
+.about_skills  img{
+    margin: 0;
+    border-radius: 1rem;
+    
+}
+.about_skills  h2{
+    font-size: 2.5rem;
+    margin: 0.5rem 0 2rem 0;
+}
+.about_skills {
+    align-items: center;
+    padding: auto;
+
+}
+
+
+.about_skills {
+    
+    align-items: center;
+
+
 }
 
 
@@ -120,86 +224,222 @@ main {
 
 /*media*/
 
-@media(max-width:1200px) {
-    
-      html {
-          font-size: 55%;
-      }
-      main {
-        padding: 0 2rem 2rem 2rem;
-        min-height: calc(100vh - 6.5rem);
-     }
-     body {
-        padding: 0 6.5rem 6.5rem 6.5rem;
-    }
-    
 
 
-}
 
 
-@media(max-width:768px) {
-    body {
-        padding:0 0 0 0;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+@media(min-width:768px){
     html {
         font-size: 55%;
     }
-    .navbar a  {
-        font-size: 2.5rem;
-        padding: 1rem 0;
-    }
-    
-    .navbar a span {
-        display: none;
-    }
-    .navbar a:hover {
-        padding-bottom: 3rem;
+    .content h3 {
+        font-size: 2rem;
+        text-align: start;
         
     }
-    .home {
-        text-align: center;
-        gap: 2rem;
+    .content span {
+        font-size: 3rem;
+        text-align: start;
+        
     }
     .image img {
         height: 30rem;
         width: 30rem;
     }
-    .content h3{
-         font-size: 3rem;
+    .table_info ul{ 
+        margin: auto;
     }
-    .content span{
-        font-size: 2.5rem;
-   }
-   main {
-    min-height: calc(100vh - 6.5rem);
-   }
-   
-
-
-
-}
-
-
-
-
-
-@media(max-width:450px) {
-    body {
-        padding: 1rem 0.5rem 0 0.5rem;
+    .content {
+        text-align: left;
+    } 
+    .navbar a:hover {
+        padding-top: 4rem;
         
     }
-    html {
-        font-size: 55%;
+    .content_about {
+       padding-top: 1rem 0 0 0.5rem;
+       text-align: center;
+       
     }
-    .home {
-        padding-top: 0;
+    .content_about h1 {
+        display: block;
+        margin: 4rem auto 1rem auto;
+        text-align: center;
+        
+        
     }
-    main {
-        padding: 0;
+    .personal1 {
+        
+        padding: 0 4rem 0rem 2rem;
+        text-align: start;
+        
+    }
+    .personal1 span {
+        display: block;
+        letter-spacing: 2px;
+    }
+    .personal2 span {
+        display: block;
+        letter-spacing: 2px;
+    }
+    .personal3 span {
+        display: block;
+        letter-spacing: 2px;
+    }
+    .personal2 {
+        
+        padding: 0 4rem 0rem 2rem;
+        text-align: start
+    }
+    .personal1 h3{
+        padding-top: 1.5rem;
+        font-size: 1.5rem;
+        
+        
+    }
+    .personal2 h3{
+        
+        font-size: 1.5rem;
+        padding-left: 2rem;
+    }
+    .personal3 h3{
+        padding: 2rem 2rem 2rem auto;
+        
+    }
+    .about_skills  h2{
+        text-align: center;
+        padding-top: 1rem;
+    } 
+    .about_skills  img{
+        display: flex;
+        text-align: center;
+        margin: auto;
+    } 
+    .about_flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
     }
     
-   
+    .flex_skills {
+        display: flex;
+        flex-direction: row;
+        gap: 10rem;
+        justify-content: center;
+    }
+    .about_img {
+        margin: 0;
+    }
+    .content_about h3 {
+        font-size: 2rem;
+    }
+    .about_img:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0px 0px 15px crimson);
+    }
+    
+    
+    
+    
+    
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+@media(min-width:1200px){
+    body {
+        width: 80vw;
+        margin: auto;
+    }
+    .image img {
+        height: 50rem;
+        width: 50rem;
+    }
+    .navbar a span {
+        display: inline-block;
+    }
+    html {
+        font-size: 65%;
+    }
+    .content a {
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+    .content span {
+        font-size: 3rem;
+        padding: 0.5rem 0;
+        text-align: start;
+    }
+    .content h3 {
+        text-align: start;
+    }
+       
+    .content p {
+        font-size: 2rem;
+        
+    }main {
+        padding: 9rem 9%;
+        
+    }
+    .navbar a:hover {
+        padding-top: 6rem;
+        
+    }.navbar a {
+        padding: 2rem 0 2rem 0;
+        
+    }
+    .content {
+        text-align: left;
+    }
+    .flex_skills {
+        justify-content: start;
+    }
+    .about_skills h1{
+        margin: 8rem auto 6rem auto;
+    }
+    .aboutme h1 {
+        margin: 10rem auto 8rem auto;
+    }
+    .flex_skills {
+        margin: 2rem auto 10rem auto;
+    
+        
+    }
+    .about_img:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0px 0px 15px crimson);
+    }
+
+
+}
+
+
+
+
+
+
 
 
