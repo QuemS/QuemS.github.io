@@ -11,6 +11,7 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
+    
     }
 html::-webkit-scrollbar {
     width: 1rem;
@@ -29,6 +30,7 @@ body {
     align-items: flex-start;
     
     
+    
 }
 .navbar a {
     font-size: 2.5rem;
@@ -44,7 +46,7 @@ body {
 }
 .navbar a:hover {
     padding-top: 2rem;
-    filter: drop-shadow(0px 0px 10px crimson);
+    
     
 }
 main {
@@ -87,7 +89,7 @@ main {
 .image {
     flex:1 1 42rem;
     text-align: center;
-    filter: drop-shadow(0px 8px 210px crimson);
+    
 
 }
 .image img {
@@ -132,6 +134,7 @@ main {
 .table_info {
     padding: 0 0.5rem;
     margin: auto;
+    
 }
 .content {
     text-align: center;
@@ -139,14 +142,17 @@ main {
 .content_about h1 {
     text-align: center;
     font-size: 2rem;
+    
 }
 .content_about {
     padding-top: 1rem 0 0 0.5rem;
     text-align: center;
+    
 }
 
 .personal1 {
     padding-top: 2rem;
+    
 }
 .personal1 h3{
     padding-top: 1.5rem;
@@ -170,6 +176,7 @@ main {
 .about_flex {
     display: flex;
     flex-direction: column;
+    
 }
 .about_img {
     background: #1a1a1a;
@@ -180,6 +187,7 @@ main {
     padding-top: 1rem;
     margin-bottom: 2rem;
     transition: 0.2s;
+    
 }
 
 
@@ -192,6 +200,7 @@ main {
     margin: 0;
     border-radius: 1rem;
     
+    
 }
 .about_skills  h2{
     font-size: 2.5rem;
@@ -200,6 +209,7 @@ main {
 .about_skills {
     align-items: center;
     padding: auto;
+    
 
 }
 
@@ -373,6 +383,9 @@ main {
     body {
         width: 80vw;
         margin: auto;
+    }
+    .home {
+        gap: 20rem;
     }
     .image img {
         height: 50rem;
