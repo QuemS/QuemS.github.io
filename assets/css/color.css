@@ -37,6 +37,9 @@ body {
 .navbar a:hover i {
     color: white;
 }
+.mini_navbar a{
+    color: white;
+}
 .content h3 {
     color: white;
 }
@@ -82,6 +85,14 @@ body {
 .about_img {
     background: #1a1a1a;
 }
+.my_education span {
+    color: white;
+    
+}
+.my_education_content_years {
+    background: #1a1a1a;
+}
+
     
 
 
