@@ -15,8 +15,8 @@ html::-webkit-scrollbar-thumb{
    
 }
 body {
-    background-color: #140a0a;
-  background-image: linear-gradient(132deg, #140a0a 0%, #160505 80%, #160505 100%);
+    background-color: #0e0e0e;
+  
 
 
 
@@ -38,6 +38,7 @@ body {
     color: white;
 }
 .mini_navbar a{
+    background-color: #1a1a1a;
     color: white;
 }
 .content h3 {
@@ -92,6 +93,28 @@ body {
 .my_education_content_years {
     background: #1a1a1a;
 }
+.get_you {
+    color: white;
+}
+.contact_block {
+    color: crimson;
+}
+.contact_block span{
+    color: white;
+}
+.contact_block h3{
+    color: white;
+}
+.contact_input input{
+    background-color: #1a1a1a;
+}
+.btn_message a{
+    color: white;
+    background-color: crimson;
+}
+
+
+
 
     
 
