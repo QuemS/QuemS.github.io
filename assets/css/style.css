@@ -23,7 +23,7 @@ html::-webkit-scrollbar-thumb {
     border-radius: 5rem;
 }
 body {
-    padding:0 0 0 0;
+    padding:0;
 }
 .navbar {
     position: fixed;
@@ -704,11 +704,11 @@ footer {
         margin: auto;
     }
     .home {
-        gap: 20rem;
+        gap: 10rem;
     }
     .image img {
-        height: 50rem;
-        width: 50rem;
+        height: 38rem;
+        width: 38rem;
     }
     .navbar a span {
         display: inline-block;
@@ -717,7 +717,7 @@ footer {
         font-size: 70%;
     }
     .content {
-        flex: 1 1 42rem;
+        flex: 1 1 30rem;
     }
     .content a {
         margin-top: 2rem;
