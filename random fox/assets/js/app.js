@@ -1,6 +1,6 @@
 
 let requestFox = new XMLHttpRequest;
-let arrImg =['/assets/image/logo.png', 'https://randomfox.ca/images/106.jpg'];
+let arrImg =['./assets/image/logo.png', 'https://randomfox.ca/images/106.jpg'];
 let count = 1;
 
 function arrPushImg (img){       //FUNCION PUSH ARRAY
