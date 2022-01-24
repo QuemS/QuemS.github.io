@@ -1,0 +1,42 @@
+let arr = [
+    {simbol: 'A', icao: 'Alpha'},
+    {simbol: 'B', icao: 'Brabo'},
+    {simbol: 'C', icao: 'Charlie'},
+    {simbol: 'D', icao: 'Delta'},
+    {simbol: 'E', icao: 'Echo'},
+    {simbol: 'F', icao: 'Foxtrot'},
+    {simbol: 'G', icao: 'Golf'},
+    {simbol: 'H', icao: 'Hotel'},
+    {simbol: 'I', icao: 'India'},
+    {simbol: 'J', icao: 'Juliett'},
+    {simbol: 'K', icao: 'Kilo'},
+    {simbol: 'L', icao: 'Lima'},
+    {simbol: 'M', icao: 'Mike'},
+    {simbol: 'N', icao: 'November'},
+    {simbol: 'O', icao: 'Oscar'},
+    {simbol: 'P', icao: 'Papa'},
+    {simbol: 'Q', icao: 'Quebec'},
+    {simbol: 'S', icao: 'Sierra'},
+    {simbol: 'T', icao: 'Tango'},
+    {simbol: 'U', icao: 'Uniform'},
+    {simbol: 'V', icao: 'Victor'},
+    {simbol: 'W', icao: 'Whiskey'},
+    {simbol: 'X', icao: 'X-ray'},
+    {simbol: 'Y', icao: 'Yankee'},
+    {simbol: 'Z', icao: 'Zulu '},
+
+    {simbol: '0', icao: 'Zero'},
+    {simbol: '1', icao: 'One'},
+    {simbol: '2', icao: 'Two'},
+    {simbol: '3', icao: 'Three'},
+    {simbol: '4', icao: 'Four'},
+    {simbol: '5', icao: 'Five'},
+    {simbol: '6', icao: 'Six'},
+    {simbol: '7', icao: 'Seven'},
+    {simbol: '8', icao: 'Eight'},
+    {simbol: '9', icao: 'Niner'},
+    
+    
+];
+
+export{arr};
