@@ -1,42 +1,58 @@
-let arr = [
-    {simbol: 'A', icao: 'Alpha'},
-    {simbol: 'B', icao: 'Brabo'},
-    {simbol: 'C', icao: 'Charlie'},
-    {simbol: 'D', icao: 'Delta'},
-    {simbol: 'E', icao: 'Echo'},
-    {simbol: 'F', icao: 'Foxtrot'},
-    {simbol: 'G', icao: 'Golf'},
-    {simbol: 'H', icao: 'Hotel'},
-    {simbol: 'I', icao: 'India'},
-    {simbol: 'J', icao: 'Juliett'},
-    {simbol: 'K', icao: 'Kilo'},
-    {simbol: 'L', icao: 'Lima'},
-    {simbol: 'M', icao: 'Mike'},
-    {simbol: 'N', icao: 'November'},
-    {simbol: 'O', icao: 'Oscar'},
-    {simbol: 'P', icao: 'Papa'},
-    {simbol: 'Q', icao: 'Quebec'},
-    {simbol: 'S', icao: 'Sierra'},
-    {simbol: 'T', icao: 'Tango'},
-    {simbol: 'U', icao: 'Uniform'},
-    {simbol: 'V', icao: 'Victor'},
-    {simbol: 'W', icao: 'Whiskey'},
-    {simbol: 'X', icao: 'X-ray'},
-    {simbol: 'Y', icao: 'Yankee'},
-    {simbol: 'Z', icao: 'Zulu '},
-
-    {simbol: '0', icao: 'Zero'},
-    {simbol: '1', icao: 'One'},
-    {simbol: '2', icao: 'Two'},
-    {simbol: '3', icao: 'Three'},
-    {simbol: '4', icao: 'Four'},
-    {simbol: '5', icao: 'Five'},
-    {simbol: '6', icao: 'Six'},
-    {simbol: '7', icao: 'Seven'},
-    {simbol: '8', icao: 'Eight'},
-    {simbol: '9', icao: 'Niner'},
-    
+let arrOne = [
+    {simbol: '1', icao: 'oдна'},
+    {simbol: '2', icao: 'дві'},
+    {simbol: '3', icao: 'три'},
+    {simbol: '4', icao: 'чотирі'},
+    {simbol: '5', icao: "п'ять"},
+    {simbol: '6', icao: 'шість'},
+    {simbol: '7', icao: 'сім'},
+    {simbol: '8', icao: 'вісім'},
+    {simbol: '9', icao: "дев'ять"},
+  
     
 ];
 
-export{arr};
+let arrTen = [
+    {simbol: '0', icao: 'десять'},
+    {simbol: '1', icao: 'oдинадцять'},
+    {simbol: '2', icao: 'дванадцять'},
+    {simbol: '3', icao: 'тринадцять'},
+    {simbol: '4', icao: "чотирнадцять"},
+    {simbol: '5', icao: "п'ятнадцять"},
+    {simbol: '6', icao: 'шістнадцять'},
+    {simbol: '7', icao: 'сімнадцять'},
+    {simbol: '8', icao: "вісімнадцять"},
+    {simbol: '9', icao: "дев'ятнадцять"},
+];
+
+let arrTwo = [
+  
+    {simbol: '2', icao: "двадцять"},
+    {simbol: '3', icao: "тридцять"},
+    {simbol: '4', icao: "сорок"},
+    {simbol: '5', icao: "п'ятдесят"},
+    {simbol: '6', icao: "шістдесят"},
+    {simbol: '7', icao: "сімдесят"},
+    {simbol: '8', icao: "вісімдесят"},
+    {simbol: '9', icao: "дев'яносто"},
+    
+
+
+  
+    
+];
+
+let arrThree = [
+    {simbol: '1', icao: "сто"},
+    {simbol: '2', icao: "двісті"},
+    {simbol: '3', icao: "триста"},
+    {simbol: '4', icao: "чотириста"},
+    {simbol: '5', icao: "пʼятсот"},
+    {simbol: '6', icao: "шістсот"},
+    {simbol: '7', icao: "сімсот"},
+    {simbol: '8', icao: "вісімсот"},
+    {simbol: '9', icao: "девʼятсот"},
+];
+
+
+export{arrOne,arrTwo,arrThree,arrTen};
