@@ -1,6 +1,6 @@
 import {arrOne,arrTwo,arrThree,arrTen} from './arr.js';
 
-let inputStr = prompt(`Введите число от 1 до 999`);
+let inputStr = +prompt(`Введите число от 1 до 999`);
 let arrInputStr = inputStr.split('');
 console.log("Массив с inputa", arrInputStr, arrInputStr.length);
 //console.log('Масиив с базой',arr);
