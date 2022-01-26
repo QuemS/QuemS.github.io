@@ -1,160 +1,71 @@
 import {arrOne,arrTwo,arrThree,arrTen} from './arr.js';
 
 let inputStr = prompt(`Введите число от 1 до 999`);
-let arrInputStr = inputStr.split('');
+let arrInputStr = inputStr.split('').reverse();
 console.log("Массив с inputa", arrInputStr, arrInputStr.length);
-//console.log('Масиив с базой',arr);
-
 
 let arrResult = [];
 let arrResultGRN = [];
-    arrResultGRN = inputStr.split('');
+arrResultGRN = inputStr.split('');
 
 
-arrInputStr.forEach(i => {
-            if (arrInputStr.length == 1) {
-                arrOne.forEach( (j) => {
-                    if (i==j.simbol) {
-                        return arrResult.push(j.icao);
+arrInputStr.forEach((arrNum, i) => {
+    switch (i) {
+        case 0:
+            arrOne.forEach((item) => {
+                if (arrNum == item.simbol) {
+                    arrResult.push(item.num);
+                }
+            });
+            break;
+        case 1:
+            if (arrNum == 1 && arrInputStr[0] != 0) {
+                arrTen.forEach((item) => {
+                    if (arrInputStr[0] == item.simbol) {
+                        arrResult.shift();
+                        return arrResult.push(item.num);
                     }
                 });
-            }else if (arrInputStr.length == 2 && arrInputStr[0] == 1){
-                arrInputStr.shift();
-                console.log(arrInputStr);
-                
-                arrInputStr.forEach( (k) => {
-                    arrTen.forEach( (j) => {
-                        if (k==j.simbol) {
-                            arrInputStr.pop();
-                            console.log(arrInputStr);
-                            return arrResult.push(j.icao);
-                        }
-                    });
-                });
-
-            }else if (arrInputStr.length == 2 ) {
-                arrTwo.forEach( (j) => {
-                    if ( i == j.simbol) {
-                        arrResult.push(j.icao);
-                        arrInputStr.shift();
-                            console.log(arrInputStr);
-                        
-                            arrInputStr.forEach( (k) => {
-                            if (arrInputStr.length == 1) {
-                                arrOne.forEach( (j) => {
-                                    if (k==j.simbol) {
-                                        return arrResult.push(j.icao);
-                                    }
-                                });
-                            }
-                        });
-
+            } else {
+                arrTwo.forEach((item) => {
+                    if (arrNum == item.simbol) {
+                        return arrResult.push(item.num);
                     }
-                });
-            }else if (arrInputStr.length == 3 && arrInputStr[1] == 0){
-                arrThree.forEach( (j) => {
-                    if ( i == j.simbol) {
-                        arrResult.push(j.icao);
-                        arrInputStr.shift();arrInputStr.shift();
-                        console.log(arrInputStr);
-                        
-                        arrInputStr.forEach( (s) => {
-                            arrOne.forEach( (l) => {
-                                if (s == l.simbol) {
-                                    return arrResult.push(l.icao);
-                                    
-                                }
-                            });
-                        });
-                    }
-                });
-            }else if (arrInputStr.length == 3 && arrInputStr[1] == 1){
-                arrThree.forEach( (j) => {
-                    if ( i == j.simbol) {
-                        arrResult.push(j.icao);
-                        arrInputStr.shift();arrInputStr.shift();
-                        console.log(arrInputStr);
-                        
-                        arrInputStr.forEach( (s) => {
-                            arrTen.forEach( (l) => {
-                                if (s == l.simbol) {
-                                    
-                                    return arrResult.push(l.icao);
-                                    
-                                }
-                            });
-                        });
-                    }
-                });
-            }else if (arrInputStr.length == 3 ){
-                arrThree.forEach( (j) => {
-                    if ( i == j.simbol) {
-                        arrResult.push(j.icao);
-                        arrInputStr.shift();
-                        
-                             arrInputStr.forEach( (k) => {
-                                if (arrInputStr.length == 2) {
-                                    arrTwo.forEach( (l) => {
-                                        if (k == l.simbol) {
-                                            arrResult.push(l.icao);
-                                            arrInputStr.shift();
-                                            
-                                            arrInputStr.forEach( (s) => {
-                                                arrOne.forEach( (l) => {
-                                                    if (s == l.simbol) {
-                                                        return arrResult.push(l.icao);
-                                                        
-                                                    }
-                                                });
-                                            });
-                                        }
-                                    });
-                                }
-                            });
-                        }
                 });
             }
-           
+            break;
+        case 2:
+            arrThree.forEach((item) => {
+                if (arrNum == item.simbol) {
+                    return arrResult.push(item.num);
+                }
+            });
+            break;
+    }
+
 });
 
-console.log(arrResultGRN);
+let strResult = arrResult.reverse().join(" ");
 let grn;
 
 if (arrResultGRN.length == 3 && arrResultGRN[1] == 1) {
     grn = 'гривень';
-}else if (arrResultGRN.length == 3 && arrResultGRN[1] == 0 && arrResultGRN[2] >= 2 && arrResultGRN[2] <= 4){
+} else if (arrResultGRN.length == 3 && arrResultGRN[1] == 0 && arrResultGRN[2] >= 2 && arrResultGRN[2] <= 4) {
     grn = 'гривні';
-}else if(arrResultGRN.length == 2 && arrResultGRN[0] == 1){
+} else if (arrResultGRN.length == 2 && arrResultGRN[0] == 1) {
     grn = 'гривень';
-}else if (arrResultGRN[arrResultGRN.length - 1] == 1) {
+} else if (arrResultGRN[arrResultGRN.length - 1] == 1) {
     grn = 'гривня';
-}else if (arrResultGRN[arrResultGRN.length - 1] == 0) {
+} else if (arrResultGRN[arrResultGRN.length - 1] == 0) {
     grn = 'гривень';
 }
 else if (arrResultGRN[arrResultGRN.length - 1] >= 2 && arrResultGRN[arrResultGRN.length - 1] <= 4) {
     grn = 'гривні';
-}else{
+} else {
     grn = 'гривень';
 }
-let strResult = arrResult.join(" ");
-alert(`Запрос: ${inputStr}.\n\nОтвет: ${strResult}`+ ` ${grn}`);
+
+alert(`Запрос: ${inputStr}.\n\nОтвет: ${strResult}` + ` ${grn}`);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
