@@ -1,5 +1,5 @@
 
-import { options } from './module.js'
+import { options,arrIfConnent } from './module.js'
 
 class IHH{
     constructor(numberIHH){
@@ -10,15 +10,12 @@ class IHH{
     }
 
     ifConnent() {
-        let calc = (this.getArr()[0] * (-1) + this.getArr()[1] * 5 + this.getArr()[2] * 7 + this.getArr()[3] * 9 + this.getArr()[4] * 4 + this.getArr()[5] * 6 + this.getArr()[6] * 10 + this.getArr()[7] * 5 + this.getArr()[8] * 7);
-        let corrent = calc % 11 == (this.getArr()[9] == 0 ? 10 : this.getArr()[9]);
-        
-        if (this.getArr().length == 10 && corrent) {
-            return true;
-        }else{
-            return false;
-        }
+        let calc = this.getArr().map((item, index) => item * arrIfConnent[index]);
+        calc.pop();
+        let sum = calc.reduce((sum, i) => sum + i, 0);
+        let corrent = sum % 11 == (this.getArr()[this.getArr().length - 1] == 0 ? 10 : this.getArr()[this.getArr().length - 1]);
 
+        return (this.getArr().length == 10 && corrent) ? true : false;
     }
     birth(){
         let dataUser = new Date(1900, 0, 31);
@@ -45,6 +42,8 @@ class IHH{
     result(){
         return alert(`Запрос ИНН: ${this.index} \n\n Пол: ${this.gender()} \n Родился : ${this.birth().toLocaleString("ru", options)} \n Возраст: ${this.howManyYears()} лет` )
     }
+
+    
 }
 
 let showInfo = new IHH(prompt('Введите ИНН'));

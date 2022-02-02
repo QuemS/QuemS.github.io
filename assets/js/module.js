@@ -5,4 +5,6 @@ const options = {
     timezone: 'UTC',
 };
 
-export{options};
+const arrIfConnent = [-1, 5, 7, 9, 4, 6, 10, 5, 7];
+
+export{options,arrIfConnent};
