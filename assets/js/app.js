@@ -1,71 +1,70 @@
+import { masterCardArr, maestroArr } from './module.js'
 
-import { options,arrIfConnent } from './module.js'
-
-class IHH{
-    constructor(numberIHH){
-        this.index = numberIHH;
+class Card{
+    constructor(numberCard){
+        this.card = numberCard;
     }
-    getArr(){
-        return this.index.split('');
+    convert(){
+        let newArr = this.card.split('').reverse().map(i =>+i)
+        return newArr;
     }
-
-    ifConnent() {
-        let calc = this.getArr().map((item, index) => item * arrIfConnent[index]);
-        calc.pop();
-        let sum = calc.reduce((sum, i) => sum + i, 0);
-        let corrent = sum % 11 == (this.getArr()[this.getArr().length - 1] == 0 ? 10 : this.getArr()[this.getArr().length - 1]);
-
-        return (this.getArr().length == 10 && corrent) ? true : false;
+    numberTwo(){
+        return this.convert().reverse().splice(0,2).join("");
     }
-    birth(){
-        let dataUser = new Date(1900, 0, 31);
-        dataUser.setDate(this.getArr().splice(0, 5).join(""));
-        return dataUser;
-         
+    numberFour(){
+        return this.convert().reverse().splice(0,4).join("");
     }
-    howManyYears(){
-        let dataNow = new Date();
-        let deff = 0;
-        deff = dataNow.getFullYear() - this.birth().getFullYear();
-        if (dataNow.getMonth() < this.birth().getMonth()) {
-            deff -= 1;
-        }else if (dataNow.getMonth() == this.birth().getMonth()) {
-            if (dataNow.getDate() < this.birth().getDate()) {
-                deff -= 1;
+    numberSix(){
+        return this.convert().reverse().splice(0,6).join("");
+    }
+    isCorrect(){
+        let sum = 0 ;
+        this.convert().map( (item,i) =>{
+            if (i % 2 == 0) {
+                sum = sum + this.convert()[i];
+            }else{
+                let double = this.convert()[i] * 2;
+                sum = sum + (double > 9 ? double - 9: double);
+            }
+            
+        });
+        return sum % 10 == 0;
+    }
+    visa(){
+        return (this.convert().reverse()[0] == 4 && this.convert().length >=13 && this.convert().length <= 19? true : false);
+    }
+    maestro(){
+        if (this.convert().length >= 12 && this.convert().length <= 19 ) {
+            
+            return (maestroArr.find( item =>  this.numberFour() == item)) ? true: false;
+        }
+    }
+    masterCard() {
+        if (this.convert().length == 16) {
+            if (this.numberTwo() >= masterCardArr[0] && this.numberTwo() <= masterCardArr[1]) {
+                return true;
+            } else if (this.numberSix() >= masterCardArr[2] && this.numberSix() <= masterCardArr[3]) {
+                return true
+            }else{
+                return false
             }
         }
-        return deff;
     }
-    gender(){
-        return this.getArr()[8] % 2 == 0 ? 'Женщина': 'Мужчина';
-    }
-    result(){
-        return alert(`Запрос ИНН: ${this.index} \n\n Пол: ${this.gender()} \n Родился : ${this.birth().toLocaleString("ru", options)} \n Возраст: ${this.howManyYears()} лет` )
-    }
-
-    
 }
 
-let showInfo = new IHH(prompt('Введите ИНН'));
-if (showInfo.ifConnent()) {
-    showInfo.result()
+
+let inputCard = '5351205051535325';
+let a = new Card(inputCard);
+
+
+if (a.visa() && a.isCorrect()) {
+    alert (`Карта: ${inputCard} VISA`)
+}else if (a.maestro() && a.isCorrect()) {
+    alert (`Карта: ${inputCard} MAESTRO`)
+}else if (a.masterCard() && a.isCorrect()) {
+    alert (`Карта: ${inputCard} MASTERCARD`)
+}else if (a.isCorrect()) {
+    alert (`Карта: ${inputCard} Другая`)
 }else{
-    alert('Неверный данные')
+    alert (`Неверный ввод`)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
