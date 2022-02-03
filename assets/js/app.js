@@ -53,7 +53,7 @@ class Card{
 }
 
 
-let inputCard = '5351205051535325';
+let inputCard = prompt('Введите номер карты');
 let a = new Card(inputCard);
 
 
