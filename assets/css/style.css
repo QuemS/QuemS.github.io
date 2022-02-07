@@ -1,0 +1,15 @@
+img{
+    width:4%;
+    height: 4%;
+    border-radius: 2px;
+    transition: 0.2s;
+    
+    
+}
+img:hover{
+    
+    transform: scale(2.5);
+}
+span{
+    color:  red;
+}
