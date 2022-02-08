@@ -1,6 +1,9 @@
+body{
+    font-family: 'Noto Sans', sans-serif;
+}
 img{
-    width:4%;
-    height: 4%;
+    width:20%;
+    height: 10%;
     border-radius: 2px;
     transition: 0.2s;
     
@@ -12,4 +15,17 @@ img:hover{
 }
 span{
     color:  red;
+}
+
+/*MEDIA*/
+
+@media (min-width: 768px){
+    img{
+        width:4%;
+        height: 4%;
+        border-radius: 2px;
+        transition: 0.2s;
+        
+        
+    }
 }

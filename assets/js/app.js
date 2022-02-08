@@ -61,9 +61,13 @@ app.innerHTML = resultArr.map( (item,index)=>{
         </tr>`
         
     }).join('');
+    dateSite.innerHTML = `
+    <h1 class= "text-center"> 
+        Курс НБУ на ${requestNbu[0].exchangedate}
+    </h1>`;
 
-
-    console.log(requestCountry);
+    
+    
 
 
 //<a href="https://www.google.com/maps/place/Bosnia+and+Herzegovina" target="_blank"><img src="${item.flags[i]}" alt="" class="mx-1" title="${item.name[i]}"></a>
