@@ -16,7 +16,7 @@ for (let i = 1; i < 366; i++) {
 }
 let arrResult = [];
 
-for (let i = 0; i < arrDate.length; i++) {
+for (let i = 0; i < arrDate.length; i++) { 
     let requestNbu = await fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=${arrDate[i]}&json`);
     requestNbu = await requestNbu.json();
     arrResult.push(requestNbu[0].rate);
@@ -62,7 +62,7 @@ let resultSell =  arrDate[countSellDay];
     resultSell = `${resultSell.split('').splice(0,4).join("")}` +'-'+`${resultSell.split('').splice(4,2).join("")}` + '-' + `${resultSell.split('').splice(6,2).join("")}`
 
 buttonStart.onclick = () => {
-    let input = inputValue.value;
+   let input = inputValue.value;
 
     console.log(`Нужно было покупать`, resultBuy + ' числа', input / arrResult[countSellDay],'$');
     console.log(`Нужно было продавать`, resultSell + ' числа', input / arrResult[countBuyDay],'$');
@@ -71,13 +71,13 @@ buttonStart.onclick = () => {
     
     let newTag = document.createElement('div')
     newTag.innerHTML = `
-    <div class="d-flex justify-content-center">
-        <div class="alert alert-success w-50" role="alert">
+    <div class="d-flex justify-content-center" id="addNewTag">
+        <div class="alert alert-success w-75" role="alert">
             <div class='text-center'>
-                <p>Нужно было покупать ${resultBuy} числа. </p>
-                <p class="border-bottom" >Результат конвертации: ${Math.round(input / arrResult[countSellDay] *100) / 100} $</p>
-                <p>Нужно было продавать ${resultSell} числа.</p>
-                <p>Результат конвертации: ${Math.round(input / arrResult[countBuyDay] * 100) / 100} $</p>
+                <p>Нужно было покупать ${resultBuy} числа по курсу ${arrResult[countBuyDay].toFixed(2)} грн.</p>
+                <p class="border-bottom" >Результат конвертации: ${Math.round(input / arrResult[countBuyDay] *100) / 100} $</p>
+                <p>Нужно было продавать ${resultSell} числа по курсу ${arrResult[countSellDay].toFixed(2)} грн.</p>
+                <p>Результат конвертации: ${Math.round(input / arrResult[countSellDay] * 100) / 100} $</p>
                 <p class="text-danger">Ваша прибыль составила без учета вычетов и налогов ${resulInputUA} грн.</p>
             </div>
         </div>
@@ -85,9 +85,9 @@ buttonStart.onclick = () => {
     </div>
    
     `
-    awaitPromise.insertAdjacentElement('beforeend' ,newTag)
+    awaitPromise.insertAdjacentElement('afterEnd' ,newTag)
 
-    lastRemove.remove();
+    
 };
 
 
