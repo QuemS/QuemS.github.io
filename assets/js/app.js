@@ -1,82 +1,94 @@
+var options = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+};
 
+let arrDate = [];
+let dateStart = new Date(2021, 0, 0);
+for (let i = 1; i < 366; i++) {
+    
+        let newDate = new Date(dateStart.setDate(dateStart.getDate() +1));
+        newDate = newDate.toLocaleString("ru", options).split('.').reverse().join('');
+        arrDate.push(newDate)
+        
+    
+}
+let arrResult = [];
 
-let requestNbu = await fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
+for (let i = 0; i < arrDate.length; i++) {
+    let requestNbu = await fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=${arrDate[i]}&json`);
     requestNbu = await requestNbu.json();
-
-let requestCountry = await fetch('https://restcountries.com/v3.1/all')
-    requestCountry = await requestCountry.json();
-
-let getNewNbu = requestNbu.map(item => ({
-        currency: item.txt,
-        cc: item.cc,
-        rate: item.rate,
-        flags: [],
-        name: []
-
-    }));
-
-let newArrCountry = requestCountry.map(item =>  ({
-        name: item.translations.rus.common,
-        currencies: item.currencies,
-        flags: item.flags.png
-    }) );
-
-
-for (let i = 0; i < getNewNbu.length; i++) {
-    for (let j = 0; j < newArrCountry.length; j++) {
-        if (newArrCountry[j].currencies !== undefined && `${getNewNbu[i].cc}` in newArrCountry[j].currencies){
-            getNewNbu[i].flags.push(`${newArrCountry[j].flags}`);
-            getNewNbu[i].name.push(`${newArrCountry[j].name}`);
-        } 
-    }
+    arrResult.push(requestNbu[0].rate);
 }
 
-let resultArr = [];
-    resultArr = getNewNbu;
+console.log(arrResult);
+awaitPromise.innerHTML = `
+<div class="alert alert-success d-flex align-items-center" role="alert">
+<div>
+    <i class="fa-solid  fa-2x fa-check"></i>
+    Готово
+</div>
+<div class="input-group mb-3 px-5 ">
+    <span class="input-group-text" id="inputGroup-sizing-default"> Сумма в грн</span>
+    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value="10000" id="inputValue">
+    <button type="button" class="btn btn-success mx-2" id="buttonStart">
+        Поиск
+    </button>
+</div>
+`
+let countSellDay = 0;
+let countBuyDay = 0;
+let max = arrResult[1] - arrResult[0];
 
-for (let j = 0; j < resultArr.length - 1; j++) {
-    for (let i = 0; i < resultArr.length - 1 - j; i++) {
-        
-        if (resultArr[i].flags.length < resultArr[i + 1].flags.length ) {
-            let temp = resultArr[i];
-            resultArr[i] = resultArr[i + 1];
-            resultArr[i + 1] = temp;
+for(let buyDay = 0; buyDay < arrResult.length - 1; buyDay++){
+    for (let sellDay = buyDay + 1 ; sellDay < arrResult.length; sellDay++) {
+        let delta = arrResult[sellDay] - arrResult[buyDay];
+        if (delta > max) {
+            max = delta;
+            countSellDay = sellDay;
+            countBuyDay = buyDay;
         }
     }
 }
-app.innerHTML = resultArr.map( (item,index)=>{
-        let flags = '';
-        for (let i = 0; i < item.flags.length; i++) {
-            
-            flags+= `<img src="${item.flags[i]}" alt="" class="mx-1" title="${item.name[i]}">`;
-        }
-        return `
-        <tr>
-        <th scope="row">${index + 1}</th>
-            <td>${item.currency} ${item.cc} </td>
-            <td>${item.rate.toFixed(2)}</td>
-            <td class="text-start">
-            ${flags}
-            </td>
-        </tr>`
-        
-    }).join('');
-    dateSite.innerHTML = `
-    <h1 class= "text-center"> 
-        Курс НБУ на ${requestNbu[0].exchangedate}
-    </h1>`;
 
+console.log( 'countBuyDay', countBuyDay);
+console.log('countSellDay',countSellDay);
+
+let resultBuy =  arrDate[countBuyDay];
+    resultBuy = `${resultBuy.split('').splice(0,4).join("")}` +'-'+`${resultBuy.split('').splice(4,2).join("")}`+'-'+ `${resultBuy.split('').splice(6,2).join("")}`
+
+let resultSell =  arrDate[countSellDay];
+    resultSell = `${resultSell.split('').splice(0,4).join("")}` +'-'+`${resultSell.split('').splice(4,2).join("")}` + '-' + `${resultSell.split('').splice(6,2).join("")}`
+
+buttonStart.onclick = () => {
+    let input = inputValue.value;
+
+    console.log(`Нужно было покупать`, resultBuy + ' числа', input / arrResult[countSellDay],'$');
+    console.log(`Нужно было продавать`, resultSell + ' числа', input / arrResult[countBuyDay],'$');
+
+    let resulInputUA = Math.round(((input / arrResult[countBuyDay]) - (input / arrResult[countSellDay])) * arrResult[countBuyDay] *100) / 100;
     
+    let newTag = document.createElement('div')
+    newTag.innerHTML = `
+    <div class="d-flex justify-content-center">
+        <div class="alert alert-success w-50" role="alert">
+            <div class='text-center'>
+                <p>Нужно было покупать ${resultBuy} числа. </p>
+                <p class="border-bottom" >Результат конвертации: ${Math.round(input / arrResult[countSellDay] *100) / 100} $</p>
+                <p>Нужно было продавать ${resultSell} числа.</p>
+                <p>Результат конвертации: ${Math.round(input / arrResult[countBuyDay] * 100) / 100} $</p>
+                <p class="text-danger">Ваша прибыль составила без учета вычетов и налогов ${resulInputUA} грн.</p>
+            </div>
+        </div>
     
+    </div>
+   
+    `
+    awaitPromise.insertAdjacentElement('beforeend' ,newTag)
 
-
-//<a href="https://www.google.com/maps/place/Bosnia+and+Herzegovina" target="_blank"><img src="${item.flags[i]}" alt="" class="mx-1" title="${item.name[i]}"></a>
-  
-
-
-
-         
-
+    lastRemove.remove();
+};
 
 
 
