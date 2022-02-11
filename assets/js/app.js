@@ -22,7 +22,7 @@ let getData = async () => {
   let arrPromise = [];
   for (let i = 0; i < arrDate.length; i++) {
     arrPromise.push(promiseOne(arrDate[i]))
-    await delay(0);
+    await delay(15);
   }
 
   Promise.all(arrPromise).then(arrResult => {
